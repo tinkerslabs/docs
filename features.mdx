@@ -1,0 +1,134 @@
+---
+title: "Features"
+sidebarTitle: "Features"
+description: "A quick tour of what you can do in Woodstock today — slash commands, agents, channels, the knowledge graph, and the GitHub connector."
+icon: "list"
+---
+
+This page is a quick tour of everything you can do in Woodstock right now. Each feature has a one-line summary and how to use it.
+
+<Note>
+  This is a sample page covering features that are live today. Planned features (collaborative docs, send-to-self, agent memory) are listed at the end so you know what's coming.
+</Note>
+
+## Slash commands
+
+Type `/` in any channel's message box to open the command menu. There are four commands—each one hands your message to a different agent. Remember to put a space after the command before your text.
+
+<AccordionGroup>
+  <Accordion title="/meeting — file a meeting" icon="calendar">
+    Drop in a meeting transcript and Woodstock extracts the people and companies mentioned, links them into your knowledge graph, and replies with what it found.
+
+    ```text
+    /meeting Standup with Anna from Acme — we agreed to ship the pilot by Friday…
+    ```
+  </Accordion>
+
+  <Accordion title="/ask — ask the brain" icon="circle-question-mark">
+    Ask a question and get a single, direct answer drawn from your workspace's notes.
+
+    ```text
+    /ask What did we decide about the Acme pilot deadline?
+    ```
+  </Accordion>
+
+  <Accordion title="/agent — ask an agent" icon="bot">
+    Like `/ask`, but the agent searches your workspace step by step and shows its work as it goes. It answers grounded in what it finds—and tells you when it doesn't have enough to answer.
+
+    ```text
+    /agent Summarize everything we know about Acme and who owns the relationship.
+    ```
+  </Accordion>
+
+  <Accordion title="/drop — file a link or note" icon="inbox">
+    Drop a link or a note and the Librarian agent files it into your Vault by topic, fetching and saving the page contents so you can find it later.
+
+    ```text
+    /drop https://example.com/pricing — competitor pricing page
+    ```
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+  `/agent` and `/drop` stream their progress live in the chat, so you can watch each step the agent takes before it settles on an answer.
+</Tip>
+
+## Agents
+
+Your workspace comes with agents you can call by name. Open the `/` menu and you'll see them listed alongside the four commands.
+
+<CardGroup cols={2}>
+  <Card title="Researcher" icon="eye">
+    A read-only agent that searches your workspace to answer questions. This is what `/agent` runs.
+  </Card>
+
+  <Card title="Librarian" icon="book">
+    A filing agent that organizes what you drop into the Vault. This is what `/drop` runs.
+  </Card>
+</CardGroup>
+
+Pick an agent from the `/` menu to send your message straight to it. Each agent shows a badge for whether it reads from or writes to your workspace.
+
+## Channels and chat
+
+<CardGroup cols={2}>
+  <Card title="Channels" icon="hash">
+    Organize work into channels. You can create, rename, set an “about” description, and archive channels from the sidebar.
+  </Card>
+
+  <Card title="Markdown messages" icon="notebook-pen">
+    Write messages in Markdown—headings, lists, links, and code all render inline.
+  </Card>
+
+  <Card title="Mention entities" icon="at-sign">
+    Type `@` to search your knowledge graph and drop in a reference to a person, company, or topic.
+  </Card>
+
+  <Card title="Push notifications" icon="bell">
+    Opt in to get pinged when an agent finishes—tap the notification to jump straight to the channel.
+  </Card>
+</CardGroup>
+
+## Knowledge graph
+
+Everything Woodstock files lands in a shared knowledge graph your whole workspace can browse.
+
+<CardGroup cols={2}>
+  <Card title="Entities Explorer" icon="share-2">
+    Browse your graph by type—Topics, References, People, and Companies—and click any entity to see its details and connections.
+  </Card>
+
+  <Card title="Vault" icon="archive">
+    Where `/drop` files your links and notes, organized by topic and surfaced in the Explorer.
+  </Card>
+</CardGroup>
+
+## GitHub connector
+
+Connect a GitHub repository so your agents can read it.
+
+<Steps>
+  <Step title="Open Settings → Connectors">
+    Go to the Connectors settings page.
+  </Step>
+  <Step title="Add a read-only token">
+    Paste a fine-grained, read-only GitHub personal access token and list the repositories you want to allow (one `owner/repo` per line), then click **Validate & Save**.
+  </Step>
+  <Step title="Ask about your repo">
+    Once connected, `/agent` can read your allowlisted repos. Just ask—for example, `/agent What changed in the last few commits to owner/repo?`
+  </Step>
+</Steps>
+
+<Note>
+  More connectors—Slack, Drive, and Notion—are coming soon.
+</Note>
+
+## Coming soon
+
+These are planned but not available yet:
+
+- **Collaborative docs** — live, shared documents
+- **Send to self** — a quick capture inbox for notes to yourself
+- **Agent memory** — agents that remember corrections over time
+- **Create your own agents** — build a custom agent from the UI
+- **More channel sources** — drop from LINE, Slack, WhatsApp, and Discord

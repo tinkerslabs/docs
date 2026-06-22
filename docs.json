@@ -41,6 +41,14 @@
     "directory": "card",
     "groups": [
       {
+        "group": "Get started",
+        "icon": "rocket",
+        "pages": [
+          "introduction",
+          "features"
+        ]
+      },
+      {
         "group": "Platform",
         "icon": "layers",
         "expanded": true,
